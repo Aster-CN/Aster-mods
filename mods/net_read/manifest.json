@@ -1,0 +1,24 @@
+{
+    "id": "net_read",
+    "name": "联网读取",
+    "version": "0.2.0",
+    "api": 2,
+    "description": "实验性联网 MOD：搜索 / 读网页 → 筛选 → 整合 → 输出。不绕过验证码、不渲染 JS，抓不到就明说。",
+    "permissions": ["net"],
+    "hooks": ["on_start", "before_prompt", "command", "on_stop"],
+    "commands": {
+        "/联网": "读取网页并基于正文回答：/联网：URL 你的问题（只给关键词则自动搜索）",
+        "/搜索": "联网搜索并回答：/搜索：关键词"
+    },
+    "settings": {
+        "timeout": 15,
+        "search_timeout": 12,
+        "max_bytes": 800000,
+        "max_chars": 6000,
+        "auto_url": true,
+        "search": true,
+        "search_results": 5,
+        "fetch_top": true,
+        "lead_sentences": 3
+    }
+}
